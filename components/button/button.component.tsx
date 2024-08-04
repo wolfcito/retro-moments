@@ -1,25 +1,22 @@
 import { StyleSheet, View, Pressable, Text } from 'react-native'
+import { Link } from 'expo-router'
 
-export function Button({
-  label,
-  theme,
-  onPress,
-}: {
-  label: string
-  theme: string
-  onPress: () => void
-}) {
+interface ButtonProps {
+  readonly label: string
+  readonly theme?: string
+  readonly onPress?: () => void
+}
+export function Button({ label, theme = 'primary', onPress }: ButtonProps) {
   if (theme === 'primary') {
     return (
       <View style={[styles.buttonContainer, { borderRadius: 18 }]}>
-        <Pressable
-          style={[styles.button, { backgroundColor: '#C67C4E' }]}
-          onPress={onPress}
-        >
-          <Text style={[styles.buttonLabel, { fontWeight: 'bold' }]}>
-            {label}
-          </Text>
-        </Pressable>
+        <Link href="/home" asChild>
+          <Pressable style={styles.button}>
+            <Text style={[styles.buttonLabel, { fontWeight: 'bold' }]}>
+              {label}
+            </Text>
+          </Pressable>
+        </Link>
       </View>
     )
   }
@@ -35,8 +32,8 @@ export function Button({
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: 320,
-    height: 68,
+    width: 'auto',
+    height: 56,
     marginHorizontal: 20,
     alignItems: 'center',
     justifyContent: 'center',
@@ -49,6 +46,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
+    backgroundColor: '#C67C4E',
   },
   buttonLabel: {
     color: '#fff',
