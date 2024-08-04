@@ -1,14 +1,9 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View, ImageBackground } from 'react-native'
 
-import { Link, router } from 'expo-router'
 import { Button } from '~/components/button'
 
-export default function App() {
-  const enterHome = () => {
-    console.log('Home')
-    router.replace('/home')
-  }
+export default function IndexScreen() {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -21,10 +16,8 @@ export default function App() {
         <Text style={styles.subtext}>
           take films and do wehathever you like to do
         </Text>
-        <Link href="/home">
-          <Text style={styles.text}>Get Started</Text>
-        </Link>
-        <Button theme="primary" label="Get Started" onPress={enterHome} />
+
+        <Button label="Get Started" />
       </ImageBackground>
       <StatusBar style="auto" />
     </View>
@@ -37,7 +30,8 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     flex: 1,
-    resizeMode: 'cover', // or 'contain'
+    width: '100%',
+    resizeMode: 'cover',
     justifyContent: 'flex-end',
   },
   text: {
@@ -49,7 +43,7 @@ const styles = StyleSheet.create({
   subtext: {
     color: '#A2A2A2',
     fontSize: 14,
-    // fontWeight: 'bold',
     textAlign: 'center',
+    marginBottom: 20,
   },
 })
