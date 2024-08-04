@@ -22,7 +22,8 @@
     "expo-camera": "~15.0.14",
     "expo-screen-capture": "~6.0.1",
     "expo-media-library": "~16.0.4",
-    "expo-screen-orientation": "~7.0.5"
+    "expo-screen-orientation": "~7.0.5",
+    "expo-updates": "~0.25.21"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
