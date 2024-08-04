@@ -1,11 +1,17 @@
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View, ImageBackground } from 'react-native'
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  SafeAreaView,
+} from 'react-native'
 
 import { Button } from '~/components/button'
 
 export default function IndexScreen() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ImageBackground
         source={require('~/assets/images/onboarding.png')}
         style={styles.backgroundImage}
@@ -18,9 +24,10 @@ export default function IndexScreen() {
         </Text>
 
         <Button label="Get Started" />
+        <View style={{ height: 50 }} />
       </ImageBackground>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   )
 }
 
